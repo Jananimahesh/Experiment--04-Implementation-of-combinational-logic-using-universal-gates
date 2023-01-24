@@ -28,16 +28,71 @@ F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 
 ## Logic Diagram
 ## Procedure
+1.create a project with required entities
+2.create a module along with respective file name.
+3.Run the respective programs for the given boolean equations.
+4.Run the module and get RTL outputs
+5.Create university program(VWF)for getting timing diagram
+6.Give the respective inputs for timing diagram and obtain the results
+
 ## Program:
 /*
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-## RTL realization
+Developed by: janani.m
+RegisterNumber:  22006734
 
-## Output:
-## RTL
+FOR NAND GATE 
+module combo1(A,B,C,D,F);
+input A,B,C,D;
+output F;
+wire p,q,r;
+assign p=(~C & B & A);
+assign q=(~D & C & ~A);
+assign r=(C & ~B & A );
+assign F=(~(~p & ~q & ~r));
+endmodule
+
+FOR NOR GATE
+module combo2(a,b,c,d,f);
+input a,b,c,d;
+output f;
+assign p=( c & ~b & a );
+assign q=( d & ~c & a );
+assign r=( c & ~b & a );
+assign f=((( p | q | r)));
+endmodule
+
+OUTPUT
+
+## RTL realization
+using NAND gate
+
+![image](https://user-images.githubusercontent.com/119432417/214346301-ad793416-36a3-4ef9-8c6c-a5d6ebfc68de.png)
+
+using NOR gate
+
+![image](https://user-images.githubusercontent.com/119432417/214346565-20811321-6980-4e57-af4d-2d1e1cd1a438.png)
+
+
 ## Timing Diagram
+using NAND gate
+
+![image](https://user-images.githubusercontent.com/119432417/214346951-85b22dec-f632-4998-a57c-21294ff4c942.png)
+
+using NOR gate
+
+![image](https://user-images.githubusercontent.com/119432417/214347203-d2394866-19f9-4781-b539-95151d5d8432.png)
+
+TRUTH TABLE
+Using NAND gate 
+
+![image](https://user-images.githubusercontent.com/119432417/214347603-3b0a543e-081e-4539-8ca9-334c30080e64.png)
+
+using NOR gate
+
+![image](https://user-images.githubusercontent.com/119432417/214348321-8a45f2ac-3cdb-4abc-9db8-a6c548e13434.png)
+
+
+
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
